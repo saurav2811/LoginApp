@@ -13,7 +13,7 @@ import com.login.dao.LoginDao;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname=request.getParameter("uname");
+		String uname=request.getParameter("id_num");
 		String pword=request.getParameter("pword");
 		
 		LoginDao dao = new LoginDao();
@@ -21,8 +21,8 @@ public class Login extends HttpServlet {
 		
 		if(dao.check(uname, pword)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("username", uname);
-			response.sendRedirect("welcome.jsp");
+			session.setAttribute("id_num", uname);
+			response.sendRedirect("report.jsp");
 		}
 		else {
 			response.sendRedirect("login.jsp");

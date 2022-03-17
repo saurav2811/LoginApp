@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class LoginDao {
-	String sql = "select * from login where uname=? and pword=?";
-	String url = "jdbc:mysql://localhost:3306/loginapp";
+	String sql = "select * from saurav_111915117_details where Employee_ID_Number=? and pass=?";
+	String url = "jdbc:mysql://localhost:3306/saurav_111915117";
 	String username = "root";
 	String password = "Saurav@mysql1";
 	
